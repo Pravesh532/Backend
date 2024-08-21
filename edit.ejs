@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit user  username</title>
+
+</head>
+<style>
+     body{
+         background: #1e9756;
+     }
+      button{
+        color: red;
+        border-radius: 10px;
+        background-color: aqua;
+       
+    
+     }
+</style>
+<body>
+    <h2> You about to edit this user : <%= users.EMAIL %></h2>
+    <form method="post" action="/user/<%= users.ID %>?_method=PATCH">
+        <br>
+         <textarea name="USERNAME" style=" background-color: black; color: antiquewhite;"> <%= users.USERNAME %></textarea>
+         <br>
+         <input type="password" name="PASSWORD" placeholder="Enter the pssword" style=" background-color: black;
+          color: antiquewhite;
+          height: 20px;
+          border-radius: 8px;
+          ">
+         <br>
+         <button style=" border-radius: 10px;
+          box-shadow: 3px 3px 10px black;">Edit</button>
+    </form>
+    
+</body>
+</html>

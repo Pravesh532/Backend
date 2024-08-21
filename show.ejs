@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>show data</title>
+    <style>
+  table,tr,th,td{
+    border: 2px solid black;
+  }
+ body{
+    background-color: rgb(142, 37, 127);
+ }
+
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>id</th>
+        <th>emial</th>
+        <th>username</th>
+        </tr>
+        
+
+        <% for(user of users) { %>
+            <tr> 
+                <td style="color: antiquewhite;"><%= user.ID %></td>
+                <td style="color: antiquewhite;"><%= user.EMAIL %></td>
+                <td style=" color: aliceblue;"> <%= user.USERNAME %></td>
+                <td>
+                <form action="/user/<%= user.ID %>/edit" method="get"> 
+                    <button style="background-color: lightskyblue;
+                     border-radius: 10px;
+                     box-shadow: 3px 5px 10px black;"
+                    
+                    
+                    > Edit user_name</button>
+                </form>
+            </td> 
+            <td>
+                <form method="get" action="/user/<%=user.ID%>">
+                    <button style=" background-color: red;
+                      box-shadow:  3px 3px 10px black;
+                      border-radius: 10px; ">
+                       Delete user</button>
+                </form>
+            </td>
+            </tr>
+            <% } %>
+
+
+    </table>
+    <form method="get" action="/user/new">
+        <button style="margin-right: 100px;
+           box-shadow: 3px 3px 10px black;
+           border-radius: 10px;
+           background-color: green;"
+        > Add new user</button>
+    </form>
+    
+
+     
+    
+</body>
+</html>
